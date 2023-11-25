@@ -1147,7 +1147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1157355240}
   m_Layer: 0
-  m_Name: FuelTanksDrone (1)
+  m_Name: RadarDrone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
