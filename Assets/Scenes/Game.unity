@@ -720,8 +720,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveHeight: 0.5
-  waveFrequency: 1.5
-  waveLength: 1
+  waveFrequency: 0.76
+  waveLength: 140
   waveOriginPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &777354250
 MeshRenderer:
@@ -1740,7 +1740,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1749,7 +1749,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
+  m_TargetDisplay: 1
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -1766,13 +1766,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621553917}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09967746, y: -0.000025256359, z: 0.00025220562, w: 0.9950198}
-  m_LocalPosition: {x: 505, y: 62, z: 470}
+  m_LocalRotation: {x: 0.32930914, y: 0.000034345117, z: 0.0002511294, w: 0.94422215}
+  m_LocalPosition: {x: 504.9, y: 177.3, z: 493.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 11.441, y: 0, z: 0.029}
+  m_LocalEulerAnglesHint: {x: 38.454, y: 0.017, z: 0.036}
 --- !u!1 &1681717134
 GameObject:
   m_ObjectHideFlags: 0
