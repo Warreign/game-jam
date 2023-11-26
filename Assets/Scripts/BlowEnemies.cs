@@ -17,7 +17,8 @@ public class BlowEnemies : MonoBehaviour
             if (blowObj.enemy.destroyed != true && Vector3.Distance(pos, blowObj.obj.transform.position) < blowRadius)
             {
                 blowObj.enemy.destroyE();
-                blowNear(blowObj);
+                if(blowObj.enemy.isBarrel)
+                    blowNear(blowObj);
             }
         }
     }
@@ -27,7 +28,7 @@ public class BlowEnemies : MonoBehaviour
         foreach (var blowObj in blowObject.enemy.blowObjNear)
         {
             blowObj.enemy.destroyE();
-            blowNear(blowObj);
+            //blowNear(blowObj);
         }
     }
 }
