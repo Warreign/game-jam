@@ -20,11 +20,14 @@ public class YourExistingScript : MonoBehaviour
         }
     }
 
-    void StartExplosion()
+    public void StartExplosion(int x, int y)
     {
         // Визначте позицію для вибуху на основі вказаних горизонтальних координат
-        Vector3 explosionPosition = new Vector3(explosionCoordinates.x, GetTerrainHeightAtCoordinates(), explosionCoordinates.y);
+        // Vector3 explosionPosition = new Vector3(x, GetTerrainHeightAtCoordinates(), y);
+        Vector3 explosionPosition = new Vector3(x, 50, y);
 
+
+        Debug.Log("Full coords: " + explosionPosition);
         // Створення екземпляру анімації вибуху на поверхні терейну
         Instantiate(explosionPrefab, explosionPosition, Quaternion.identity);
     }

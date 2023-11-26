@@ -21,6 +21,7 @@ public class CarController : MonoBehaviour
         //public GameObject wheelEffectObj;
         //public ParticleSystem smokeParticle;
         public Axel axel;
+        public Quaternion initRot;
     }
 
     public float maxAcceleration = 30.0f;
@@ -44,6 +45,8 @@ public class CarController : MonoBehaviour
     {
         GetInputs();
         AnimateWheels();
+        if (wheels[0].wheelModel.transform.position.y < -5)
+            Debug.Log("GameOver");
         //WheelEffects();
     }
 
@@ -76,8 +79,8 @@ public class CarController : MonoBehaviour
     {
         foreach(var wheel in wheels)
         {
-            wheel.wheelCollider.motorTorque = moveInput * 2.8f * maxAcceleration /** Time.deltaTime*/;
-            if(wheel.wheelCollider.motorTorque < 0)
+            wheel.wheelCollider.motorTorque = moveInput * 200f * maxAcceleration /** Time.deltaTime*/;
+            if (wheel.wheelCollider.motorTorque < 0)
                 wheel.wheelCollider.motorTorque = Math.Max(-maxSpeed, wheel.wheelCollider.motorTorque);
             else
                 wheel.wheelCollider.motorTorque = Math.Min(maxSpeed, wheel.wheelCollider.motorTorque);
@@ -94,6 +97,7 @@ public class CarController : MonoBehaviour
             {
                 var _steerAngle = steerInput * turnSensitivity * maxSteerAngle;
                 wheel.wheelCollider.steerAngle = Mathf.Lerp(wheel.wheelCollider.steerAngle, _steerAngle, 0.6f);
+                //Debug.Log(_steerAngle + " " + wheel.wheelCollider.steerAngle);
             }
         }
     }
@@ -128,7 +132,7 @@ public class CarController : MonoBehaviour
             Vector3 pos;
             wheel.wheelCollider.GetWorldPose(out pos, out rot);
             wheel.wheelModel.transform.position = pos;
-            wheel.wheelModel.transform.rotation = rot;
+            wheel.wheelModel.transform.rotation = rot * wheel.initRot;
         }
     }
 
@@ -154,5 +158,11 @@ public class CarController : MonoBehaviour
     void Start()
     {
         carRb.centerOfMass = _centerOfMass;
+        for(int i = 0; i < wheels.Count; i++)
+        {
+            Wheel wheelLocal = wheels[i];
+            wheelLocal.initRot = wheelLocal.wheelModel.transform.rotation;
+            wheels[i] = wheelLocal;
+        }
     }
 }
