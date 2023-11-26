@@ -15,6 +15,25 @@ public class ChangeCamera : MonoBehaviour
     }
 
     public List<Cam> cameras;
+
+    IEnumerator waiterR()
+    {
+        Debug.Log("Waiter_g");
+        yield return new WaitForSecondsRealtime(1);
+        cameras[currentCam].camera.SetActive(false);
+        currentCam = currentCam + 1 > maxCamNum ? 0 : currentCam + 1;
+        cameras[currentCam].camera.SetActive(true);
+    }
+
+    IEnumerator waiterL()
+    {
+        Debug.Log("Waiter_g");
+        yield return new WaitForSecondsRealtime(1);
+        cameras[currentCam].camera.SetActive(false);
+        currentCam = currentCam - 1 < 0 ? maxCamNum : currentCam - 1;
+        cameras[currentCam].camera.SetActive(true);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,15 +45,11 @@ public class ChangeCamera : MonoBehaviour
     {
         if (Input.GetKeyDown("right"))
         {
-            cameras[currentCam].camera.SetActive(false);
-            currentCam = currentCam+1 > maxCamNum ? 0 : currentCam+1;
-            cameras[currentCam].camera.SetActive(true);
+            StartCoroutine(waiterR());
         }
         if (Input.GetKeyDown("left"))
         {
-            cameras[currentCam].camera.SetActive(false);
-            currentCam = currentCam - 1 < 0 ? maxCamNum : currentCam - 1;
-            cameras[currentCam].camera.SetActive(true);
+            StartCoroutine(waiterL());
         }
     }
 }
