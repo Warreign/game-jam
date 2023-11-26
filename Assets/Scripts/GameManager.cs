@@ -13,11 +13,19 @@ public class GameManager : MonoBehaviour
     public int currentX = 0;
     public int currentY = 0;
 
+    public int ammo = 5;
+    public int health = 100;
+
     public TextMeshProUGUI xField;
     public TextMeshProUGUI yField;
 
+    public TextMeshProUGUI targetsLeftField;
+
+    public TextMeshProUGUI leftAmmoField;
+
+    public TextMeshProUGUI healthField;
+
     public int targetsLeft = 0;
-    public int health = 100;
 
 
     // Start is called before the first frame update
@@ -38,6 +46,9 @@ public class GameManager : MonoBehaviour
 
         xField.text = currentX.ToString();
         yField.text = currentY.ToString();
+        healthField.text = health.ToString();
+        leftAmmoField.text = ammo.ToString();
+        targetsLeftField.text = targetsLeft.ToString();
     }
 
     public void increaseX()
@@ -59,5 +70,21 @@ public class GameManager : MonoBehaviour
     {
         currentY--;
     }
+
+    public void enterDroneMode()
+    {
+        droneController.toggle();
+    }
+
+    public void enterDriveMode()
+    { 
+
+    }
+
+    public void fire()
+    {
+
+    }
+
 
 }
