@@ -50,6 +50,7 @@ public class DroneController : MonoBehaviour
         {
             drones.Add(child.gameObject);
         }
+        Debug.Log("Number of drones " + drones.Count);
     }
 
     // Update is called once per frame
