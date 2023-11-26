@@ -3671,7 +3671,7 @@ Transform:
   m_GameObject: {fileID: 2130337623}
   serializedVersion: 2
   m_LocalRotation: {x: 0.114763826, y: -0, z: -0, w: 0.9933928}
-  m_LocalPosition: {x: 0.099975586, y: 24.60001, z: -76.099976}
+  m_LocalPosition: {x: 2.3, y: 24.60001, z: -76.099976}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4420,7 +4420,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3272502425373184768}
   serializedVersion: 4
-  m_Mass: 350
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -4451,11 +4451,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 054124ca8123380428614b0c3899d379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAcceleration: 30
-  brakeAcceleration: 1.5
-  brakeAccelerationButton: 5
-  maxSpeed: 60
-  turnSensitivity: 0.62
+  maxAcceleration: 100
+  brakeAcceleration: 40
+  brakeAccelerationButton: 60
+  maxSpeed: 1000
+  turnSensitivity: 0.7
   maxSteerAngle: 30
   _centerOfMass: {x: 0, y: 0, z: 0}
   wheels:
@@ -4464,7 +4464,7 @@ MonoBehaviour:
     axel: 0
     initRot: {x: 0, y: 0, z: 0, w: 0}
   - wheelModel: {fileID: 8918734681513137382}
-    wheelCollider: {fileID: 2082408101}
+    wheelCollider: {fileID: 1088957779}
     axel: 0
     initRot: {x: 0, y: 0, z: 0, w: 0}
   - wheelModel: {fileID: 6229656173670838951}
