@@ -45,6 +45,8 @@ public class CarController : MonoBehaviour
     {
         GetInputs();
         AnimateWheels();
+        if (wheels[0].wheelModel.transform.position.y < -5)
+            Debug.Log("GameOver");
         //WheelEffects();
     }
 
