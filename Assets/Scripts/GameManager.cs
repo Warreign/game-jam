@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public int currentX = 0;
     public int currentY = 0;
 
-    public int ammo = 5;
+    public int ammo;
     public int health = 100;
 
     List<GameObject> islandTargets;
@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
 
     public void enterDriveMode()
     { 
-        bohdana.SetActive(!mainCamera.enabled);
+        bohdana.SetActive(mainCamera.enabled);
         mainCamera.enabled = !mainCamera.enabled;
     }
 
@@ -117,12 +117,12 @@ public class GameManager : MonoBehaviour
 
     public void gameOver()
     {
-        SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
+        SceneManager.LoadScene("GameOver");
     }
 
     public void win()
     {
-        SceneManager.LoadScene("WinOver", LoadSceneMode.Additive);
+        SceneManager.LoadScene("WinOver");
 
     }
 
