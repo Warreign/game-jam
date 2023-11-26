@@ -581,7 +581,7 @@ TerrainCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_TerrainData: {fileID: 15600000, guid: 89638726ac7bb314dbf883a874aeefee, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: 442596273e0de60499463950ae1538c0, type: 2}
   m_EnableTreeColliders: 1
 --- !u!1 &497539107
 GameObject:
@@ -1494,7 +1494,7 @@ TerrainCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_TerrainData: {fileID: 15600000, guid: 6c409d55b2496204daf543b3d659fbbd, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: 6051572a9c4908344a862c0a3027dfd6, type: 2}
   m_EnableTreeColliders: 1
 --- !u!1001 &815691345
 PrefabInstance:
