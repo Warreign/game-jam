@@ -6,7 +6,7 @@ using static Enemy;
 
 public class BlowEnemies : MonoBehaviour
 {
-    public float blowRadius = 10f;
+    public float blowRadius = 100f;
 
     public GameManager manager;
 
@@ -16,9 +16,13 @@ public class BlowEnemies : MonoBehaviour
     {
         foreach (var blowObj in blowObjs)
         {
-            if (blowObj.enemy.destroyed != true && Vector2.Distance(pos, new Vector2(blowObj.obj.transform.position.x, blowObj.obj.transform.position.z)) < blowRadius)
+            var dist = Vector2.Distance(pos, new Vector2(blowObj.obj.transform.position.x, blowObj.obj.transform.position.z));
+            Debug.Log("Distance to " + blowObj.enemy.gameObject.name + " is " + dist);
+            if (!blowObj.enemy.destroyed && dist < blowRadius)
             {
+                Debug.Log("Destroying " + blowObj.enemy.gameObject.name);
                 blowObj.enemy.destroyE();
+                manager.decreaseTargets();
                 if(blowObj.enemy.isBarrel)
                     blowNear(blowObj);
             }

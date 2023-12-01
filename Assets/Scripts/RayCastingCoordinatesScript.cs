@@ -20,11 +20,16 @@ public class YourExistingScript : MonoBehaviour
         }
     }
 
-    public void StartExplosion(int x, int y)
+    public void StartExplosion(int x, int z)
     {
         // Визначте позицію для вибуху на основі вказаних горизонтальних координат
-        // Vector3 explosionPosition = new Vector3(x, GetTerrainHeightAtCoordinates(), y);
-        Vector3 explosionPosition = new Vector3(x, 50, y);
+        // float y = GetTerrainHeightAtCoordinates(x, z);
+
+        Vector3 explosionPosition = new Vector3(x, GetTerrainHeightAtCoordinates(x, z), z);
+
+        Debug.Log("Spawned explostion at: " + explosionPosition);
+
+        // Vector3 explosionPosition = new Vector3(x, 50, y);
 
 
         Debug.Log("Full coords: " + explosionPosition);
@@ -32,10 +37,10 @@ public class YourExistingScript : MonoBehaviour
         Instantiate(explosionPrefab, explosionPosition, Quaternion.identity);
     }
 
-    float GetTerrainHeightAtCoordinates()
+    float GetTerrainHeightAtCoordinates(float x, float z) 
     {
         // Визначте висоту терейну в точці за горизонтальними координатами
-        Ray ray = new Ray(new Vector3(explosionCoordinates.x, 1000f, explosionCoordinates.y), Vector3.down);
+        Ray ray = new Ray(new Vector3(x, 1000f, z), Vector3.down);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, terrainLayer))

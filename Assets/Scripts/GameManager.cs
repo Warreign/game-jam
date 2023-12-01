@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
         yField.text = currentY.ToString();
         healthField.text = health.ToString();
         leftAmmoField.text = ammo.ToString();
-        targetsLeftField.text = targetsLeft.ToString();
+        targetsLeftField.text = Math.Max(targetsLeft, 0).ToString();
     }
 
     public void increaseX()
@@ -109,7 +109,7 @@ public class GameManager : MonoBehaviour
         {
             gameOver();
         }
-        else if (ammo ==0 && targetsLeft ==0)
+        else if (targetsLeft <= 0)
         {
             win();
         }

@@ -27,14 +27,11 @@ public class Enemy : MonoBehaviour
 
     public void destroyE()
     {
-        destroyed = true;
-        this.gameObject.SetActive(false);
-        destroyedPath.SetActive(true);
+        Debug.Log("Destroyed " + this.gameObject.name);
 
-        if (isBarrel)
-        {
-            
-        }
+        destroyed = true;
+        destroyedPath.gameObject.SetActive(true);
+        this.gameObject.gameObject.SetActive(false);
         
     }
 

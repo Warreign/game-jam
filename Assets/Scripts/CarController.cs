@@ -164,5 +164,7 @@ public class CarController : MonoBehaviour
             wheelLocal.initRot = wheelLocal.wheelModel.transform.rotation;
             wheels[i] = wheelLocal;
         }
+
+        gameObject.SetActive(false);
     }
 }
